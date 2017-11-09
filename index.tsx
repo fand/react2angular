@@ -1,8 +1,16 @@
 import { IAugmentedJQuery, IComponentOptions } from 'angular'
-import fromPairs = require('lodash.frompairs')
 import NgComponent from 'ngcomponent'
 import * as React from 'react'
 import { render, unmountComponentAtNode } from 'react-dom'
+
+const fromPairs = (pairs: any[]) => {
+  let hash: any = {};
+  pairs.forEach(([k, v]) => {
+    hash[k] = v;
+  })
+  return hash;
+}
+
 
 /**
  * Wraps a React component in Angular. Returns a new Angular component.
